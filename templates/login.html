@@ -1,0 +1,39 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+   <ion-content class="bgbody" padding="true" >
+      <div class="list">
+         <div class="logo_tb"><img src="img/tb-logo.png"></div>
+         <div class="list-full">
+			 
+			   <div class="list-fullno">
+			 
+            <div class="app_sign"> <img src="img/mobile.png"></div>
+            <label class="item item-input bord_no">
+               <!--<span class="input-label">Username</span>-->
+               <input type="text" class="algn_cent bgbody lefft" placeholder='Mobile' ng-model="loginData.email">
+            </label>
+            <div class="app_sign"> <img src="img/lock.png"></div>
+            <label class="item item-input bord_no">
+               <!--<span class="input-label">Password</span>-->
+               <input type="password"  class="algn_cent bgbody lefft" placeholder='Password' ng-model="loginData.password">
+            </label>
+            <br>
+            <br>
+            <label class="item none">
+            <a href="#/app/searchbus"><button class="button button-block button-positive redclr" type="submit">LOG IN</button></a>
+            <button class="button button-block button-positive bluclr" type="submit">Connect With Facebook</button>
+            </label>
+			 
+			 </div>
+			 
+         </div>
+		  
+		  
+      </div>
+   </ion-content>
+</ion-modal-view>

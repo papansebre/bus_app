@@ -1,0 +1,55 @@
+<ion-side-menus enable-menu-with-back-views="false">
+   <ion-side-menu-content>
+      <ion-nav-bar class="bar-stable">
+         <ion-nav-back-button>
+         </ion-nav-back-button>
+         <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+            </button>
+         </ion-nav-buttons>
+      </ion-nav-bar>
+      <ion-nav-view name="menuContent"></ion-nav-view> 
+   </ion-side-menu-content>
+   <ion-side-menu side="left">
+      <ion-header-bar class="bar-stable">
+         <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+         <h1 class="title">Select your Seat</h1>
+      </ion-header-bar>
+      <ion-content>
+         <ion-list>
+            <ul>
+             <li  class="tb-side-list" ui-sref="app.search "menu-close="">
+                  <img src="img/home.png">
+                  <p>Home</p>
+			   </li>
+               <li ng-show="userData" class="tb-side-list"  ui-sref="app.tab "menu-close="">
+                  <img src="img/trip.png">
+                  <p>My Trips</p>
+               </li>
+				
+				<li ng-show="userData" class="tb-side-list" >
+                  <img src="img/wallet.png">
+                  <p>Wallet</p>
+               </li>
+               <li ng-show="userData" class="tb-side-list" ui-sref="app.cancel" menu-close="" >
+                  <img src="img/cancel.png">
+                  <p>Cancel ticket</p>
+               </li>
+               <li ng-show="userData" class="tb-side-list" ui-sref="app.changePswrd" menu-close="" >
+                  <img src="img/settings.png">
+                  <p>Change Password</p>
+               </li>
+				<li ng-show="userData" class="tb-side-list" ng-click="logout()" menu-close="">
+                  <img src="img/logout.png">
+                  <p>Logout</p>
+				 </li>
+             <li ng-hide="userData" class="tb-side-list width" ui-sref="app.landing"menu-close="">
+                  <img class="logicon" src="img/login.png">
+                  <p class="logs">Sign In / Sign Up</p>
+            </li>
+            </ul>
+         </ion-list>
+      </ion-content>
+   </ion-side-menu>
+</ion-side-menus>
+

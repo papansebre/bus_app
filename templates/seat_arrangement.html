@@ -1,0 +1,172 @@
+<ion-view view-title="Kochi To Thrivandrum" hide-nav-bar="true">
+   <ion-header-bar align-title="left" class="artist-title-bg border">
+      <div class="buttons">
+         <button class="button back-button whtclr button-clear header-item" ng-click="GologinBack()"><i class="icon ion-ios-arrow-back"></i>
+         <span class="back-text" style="transform: translate3d(0px, 0px, 0px);"><span class="default-title">&nbsp;</span></span>
+         </button>
+      </div>
+      <div class="tit">
+         Select Your Seat
+      </div>
+   </ion-header-bar>
+   <ion-content class="bgbody">
+      <div class="place_inf">
+         <div class="plce_dtl">
+            <div class="place_from">{{searchData.from}}</div>
+            <div class="arrows_plc"><img src="img/arrow-right.png">
+            </div>
+            <div class="place to">{{searchData.to}}</div>
+         </div>
+         <br>
+         <div class="dte_arw">
+            <img src="img/left-arw.png" class="arw_img">&nbsp; &nbsp; <span class="date_current"> {{searchData.book_date | date:'dd-MMMM-yyyy' }} </span>&nbsp;&nbsp; <img src="img/rht-arw.png" class="arw_img">
+         </div>
+      </div>
+      <div class="bus_detail">
+         <div class="seat_layout">
+            <div class="seat_layout1">&nbsp;</div>
+            <div class="seat_layout-o">
+               <div class="seats" >  <!-- ng-click="toggleFooter()" -->
+
+                  <!-- table bus seat alignment starts-->
+
+<div class="bus-ster">
+  <div class="driver">
+  <h3><img src="http://truebus.co.in/assets/images/driver.png"></h3>
+  </div>
+</div>
+
+<div class="row scroll-white-char">
+<div class="col">
+  <div class="set-A" ng-repeat="row0 in details.seat_layout[0]">
+     <div ng-class="row0.status =='true' ? 's'+row0.type : row0.type" data-status="{{row0.status}}" data-class="{{row0.type}}" data-rate="{{details.fare}}" data-seat="{{row0.seat_no}}" data-bus="{{ details.bus_id}}" ng-click="Selectedseat(row0.seat_no)" id="{{row0.seat_no}}"></div>
+  </div>
+
+</div>
+
+
+<div class="col">
+  <div class="set-B" ng-repeat ="row1 in details.seat_layout[1]">
+   <div ng-class="row1.status =='true' ? 's'+row1.type : row1.type" data-status="{{row1.status}}" data-class="{{row1.type}}" data-rate="{{details.fare}}" data-seat="{{row1.seat_no}}" data-bus="{{ details.bus_id}}" ng-click="Selectedseat(row1.seat_no)" id="{{row1.seat_no}}"></div>
+  </div>
+</div>
+
+<div class="col"></div>
+
+<div class="col">
+  <div class="set-C" ng-repeat ="row2 in details.seat_layout[2]">
+   <div ng-class="row2.status =='true' ? 's'+row2.type : row2.type" data-status="{{row2.status}}" data-class="{{row2.type}}" data-rate="{{details.fare}}" data-seat="{{row2.seat_no}}" data-bus="{{ details.bus_id}}" ng-click="Selectedseat(row2.seat_no)" id="{{row2.seat_no}}"></div>
+  </div>
+</div>
+
+
+<div class="col">
+  <div class="set-D" ng-repeat ="row3 in details.seat_layout[3]">
+   <div ng-class="row3.status =='true' ? 's'+row3.type : row3.type" data-status="{{row3.status}}" data-class="{{row3.type}}" data-rate="{{details.fare}}" data-seat="{{row3.seat_no}}" data-bus="{{ details.bus_id}}" ng-click="Selectedseat(row3.seat_no)" id="{{row3.seat_no}}"></div>
+  </div>
+</div>
+
+</div>
+
+
+<!-- last-row -->
+<div class="row">
+  <div class="col" ng-repeat ="row4 in details.seat_layout[4]">
+    <div  ng-class="row4.status =='true' ? 's'+row4.type :row4.type" data-status="{{row4.status}}" data-class="{{row4.type}}" data-rate="{{details.fare}}" data-seat="{{row4.seat_no}}" data-bus="{{ details.bus_id}}" ng-click="Selectedseat(row4.seat_no)" id="{{row4.seat_no}}"></div>
+    
+  </div>  
+</div>
+<!-- last-row -->
+
+
+        
+          <!-- <div class="tablebus">
+                 <div class="driver"><img src="http://truebus.co.in/assets/images/driver.png"></div>
+                   <div class="box-body  layouts" id="layouts" >
+            
+                       
+                        
+                      
+                           <div class="nopadding " >
+                             <div class="nopadding" ng-repeat="row0 in details.seat_layout[0]">
+                                 <div ng-class="row0.status =='true' ? 's'+row0.type : row0.type" data-class="{{row0.type}}" data-rate="{{details.fare}}" data-seat="{{row0.seat_no}}" data-bus="{{ details.bus_id}}" ng-click="Selectedseat(row0.seat_no)" id="{{row0.seat_no}}"></div>
+                             </div>
+                           </div>
+                           
+                           <div class="nopadding " >
+                             <div class="nopadding  " ng-repeat ="row1 in details.seat_layout[1]">
+                                 <div ng-class="row1.status =='true' ? 's'+row1.type : row1.type" data-class="{{row1.type}}" data-rate="{{details.fare}}" data-seat="{{row1.seat_no}}" data-bus="{{ details.bus_id}}" ng-click="Selectedseat(row1.seat_no)" id="{{row1.seat_no}}"></div>
+                             </div>
+                           </div>
+                           
+                         </div>
+                       
+                       
+                       
+                       <div class="col-md-20 nopadding"></div>
+
+                       <div class="col-md-40 nopadding">
+                        <div class="col-md-6 nopadding " >
+                             <div class="col-md-12 nopadding  " ng-repeat ="row2 in  details.seat_layout[2]">
+                                 <div ng-class="row2.status =='true' ? 's'+row2.type : row2.type" data-class="{{row2.type}}" data-rate="{{details.fare}}" data-seat="{{row2.seat_no}}" data-bus="{{ details.bus_id}}" ng-click="Selectedseat(row2.seat_no)" id="{{row2.seat_no}}"></div>
+                             </div>
+                           </div>
+                           <div class="col-md-6 nopadding" >
+                             <div class="col-md-12 nopadding " ng-repeat ="row3 in  details.seat_layout[3] ">
+                                 <div ng-class="row3.status =='true' ? 's'+row3.type : row3.type" data-class="{{row3.type}}" data-rate="{{details.fare}}" data-seat="{{row3.seat_no}}" data-bus="{{ details.bus_id}}" ng-click="Selectedseat(row3.seat_no)" id="{{row3.seat_no}}"></div>
+                             </div>
+                           </div>
+                       </div>
+
+                       <div class="col-md-12 nopadding">
+                        <div class="col-md-12 nopadding" >
+                              <div class="col-md-20 nopadding " ng-repeat ="row4 in details.seat_layout[4] "  >
+                        
+                          <div  ng-class="row4.status =='true' ? 's'+row4.type :row4.type" data-class="{{row4.type}}" data-rate="{{details.fare}}" data-seat="{{row4.seat_no}}" data-bus="{{ details.bus_id}}" ng-click="Selectedseat(row4.seat_no)" id="{{row4.seat_no}}"></div>
+                              </div>
+                               
+                        </div>
+                       </div>
+
+                   </div> -->
+                   <!----------- Last Row End ---------->
+                       <!----------- Right Row Start ---------->
+                       <!----------- Middle Row  ---------->
+                       <!----------- Left Row Start ---------->
+                       <!----------- Right Row Start ---------->
+                       <!----------- Middle Row  ---------->
+                      
+                     <!----------- Last Row Start ---------->
+                     </div>
+                
+
+                  <!-- table bus seat alignment ends-->
+        
+
+        </div>
+            </div>
+            <div class="seat_layout3">&nbsp;</div>
+         </div>
+      </div>
+
+   </ion-content>
+   <ion-footer-bar ng-show="num>0" class="bar-assertive" style="background-color:white;height:61px;border:none; box-shadow: 1px 1px 3px #888888;">
+       <div class="price_details">
+         <div class="price_details1">
+            Seats
+            <div class="seat-float">
+              <!-- <p>A1,A2,A3,A4,A5</p> -->
+              <p ng-repeat="s in seats">{{s}}&nbsp;</p>
+            </div>
+         </div>
+         <div class="price_details2">
+            Total Fare
+            <p>INR {{amount}}</p>
+         </div>
+         <div class="price_details3">
+            <a href="#/app/boardig-point">   <button class="tb_done">DONE</button></a>
+         </div>
+      </div>
+   </ion-footer-bar>
+</ion-view>
+

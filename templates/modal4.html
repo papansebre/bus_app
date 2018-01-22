@@ -1,0 +1,109 @@
+<ion-modal-view>
+    <ion-header-bar align-title="left" class="artist-title-bg border">
+        <div class="buttons">
+       	<button class="tb-pop-close button-clear" ng-click="modal4.hide()">
+      				<i class="icon icon-left ion-close-round normal"></i>
+      	</button>
+        </div>
+      <div class="tit">
+      </div>
+
+    </ion-header-bar>
+    
+    <ion-content class="padding">
+		<div class="popover_out">
+			<div class="ticket_status">
+			   	<div class="modal_ticket">
+			   		<div class="trav_dtl1"><p>TICKET NUMBER</p></div><hr>
+			   		<div class="font_dcr1 wght">{{trip.booking_id}}</div>
+			   	</div>
+			   	<div class="modal_status">
+			   		<div class="trav_dtl1"><p>TICKET STATUS</p></div><hr>
+			   		<div class="font_dcr1 wght">{{trip.status}}</div>
+			   		<!-- <div class="tb_tour_type">{{trip.status}}</div> -->
+			   	</div>
+		   	</div>
+			<p>TRIP DETAILS</p>
+			<hr>
+			<div class="trip_dtl">
+				<div class="row">
+					<div class="col">
+						<div class="travels_tb">
+							<img src="img/travel.png">
+							 <div class="tb_tour mlft">
+				                 <span class="font_dcr wght">{{trip.bus_name}}</span>
+				                   <br>
+				                  <div class="tb_tour_type">{{trip.bus_type}}</div>
+				             </div>
+						</div>
+					</div>
+
+					<div class="col">
+						  <div class="travels_tb">
+							<img src="img/tb_board.png">
+							<div class="tb_tour mlft">
+			                   <span class="font_dcr wght"> {{trip.board_time}} - {{trip.drop_time}}</span>
+			                   <br>
+			                   <div class="tb_tour_type">{{trip.booking_date | date:'dd-MMMM-yyyy '}}</div>
+			                </div>
+						</div>
+						
+					</div>
+				</div>
+		
+				<div class="row">
+					<div class="col">
+						<div class="travels_tb">
+						<img src="img/tb_board.png">
+						<div class="tb_tour mlft">
+
+						<span class="font_dcr wght">{{trip.pickup_point}}</span>
+						<div class="tb_tour_type">Duration {{trip.duration}} Hrs</div>
+						</div>
+						</div>
+
+					</div>
+					<div class="col">
+						&nbsp;
+					</div>
+
+				</div>
+
+
+			</div>
+	
+
+			<P class="trav_dtl">TRAVELLERS DETAILS</P>
+			<hr>
+			
+			<div class="list_travel" ng-repeat="customer in trip.customer_details track by $index">
+				
+				<div class="list_travel1">
+
+					<div class="travels_tb logins">
+						<img src="img/login.png">
+						 <div class="tb_tour mlft">
+					       <span class="font_dcr wght">{{customer.name}}</span>
+					       <br>
+					       <div class="tb_tour_type"> {{customer.gender}} Age {{customer.age}}</div>
+					    </div>
+					</div>
+				</div>
+				
+					
+				<div class="list_travel2">
+					<div class="travels_tb">
+						<span class="font_dcr wght">{{customer.seat}}</span>
+					</div>
+
+				</div>
+			</div>
+			<div class="total_amt">Total Amount RS: {{trip.amount}}</div>
+		</div>
+
+		<div class="button_lower">
+			<button class="check_done" ng-click="modal4.hide()">DONE</button>
+		</div>	
+			
+    </ion-content>
+</ion-modal-view>

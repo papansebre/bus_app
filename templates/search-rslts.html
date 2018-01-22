@@ -1,0 +1,58 @@
+<ion-view view-title="Kochi To Thrivandrum" scrollbar-x="false" scrollbar-y="false" hide-nav-bar="true">
+   <ion-header-bar align-title="left" class="artist-title-bg border">
+      <div class="buttons">
+         <button class="button back-button whtclr button-clear header-item" ng-click="GologinBack()"><i class="icon ion-ios-arrow-back"></i>
+         <span class="back-text" style="transform: translate3d(0px, 0px, 0px);"><span class="default-title">&nbsp;</span></span>
+         </button>
+      </div>
+      <div class="tit">
+         {{searchData.from}} To {{searchData.to}}
+      </div>
+	  <div class="filter_out"><button class="filter" ng-disabled="!status" ng-click = "viewFilter()"></button></div>
+	    
+   </ion-header-bar>
+   <ion-content class="bgbody">
+      <div class="place_inf">
+         <div class="plce_dtl">
+            <div class="place_from">{{searchData.from}}</div>
+            <div class="arrows_plc"><img src="img/arrow-right.png">
+            </div>
+            <div class="place to">{{searchData.to}}</div>
+         </div>
+         <br>
+         <div class="dte_arw">
+            <img src="img/left-arw.png" class="arw_img">&nbsp; &nbsp; <span class="date_current"> {{searchData.book_date | date:'dd-MMMM-yyyy' }} </span>&nbsp;&nbsp; <img src="img/rht-arw.png" class="arw_img">
+         </div>
+      </div>
+      <div class="bus_detail" ng-show='status'>
+         <div class="bus_dtlinner animated bounceInLeft" data-ng-repeat="bus in wine = (busDetails.result | filter:nameFilter |filter:typeFilter | selectedAmentity:amentityfilter | selecteddrop:DPfilter | selectedBrd:BPfilter)" ng-click="selectOneBus(bus)">
+            <div class="row">
+               <div class="col">
+                  <div class="tb_seats_list1">
+                     <div class="tb_seats_list1_inner">
+                        <img src="img/bus-2.png">
+                        <div class="tb_tour">
+                           <b>{{bus.board_time}} </b>-<span class="txt_gray">{{bus.drop_time}}</span>
+                           <br>
+                           <span class="font_dcr"> {{bus.bus_name}}</span>
+                           <br>
+                           <div class="tb_tour_type">{{bus.bus_type}}</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col">
+                  <div class="tb_seats_left">
+                     <div class="tb_seats_list1_inner">
+                        <div class="tb_tour_type">{{bus.totel_seat}} Seats</div>
+                        <b class="rupees">INR {{bus.fare}}</b>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+       </div>
+      <div class="message" ng-show="!status">{{busDetails.message}}</div>
+   </ion-content>
+</ion-view>
+

@@ -1,0 +1,26 @@
+<ion-modal-view>
+         <ion-header-bar align-title="left" class="artist-title-bg border">
+      <div class="search_tit">
+      filter amentities
+      </div>
+      <div class="board_search">
+        <input type="text" placeholder="search" name="search" ng-model="s.searchAmn" class="search_lense" />
+      </div>
+      <!-- <button class="search"></button> -->
+   </ion-header-bar>
+        <ion-content class="padding">
+			
+			<ul class="list">
+<li class="item item-checkbox" ng-repeat="a in amentity | filter:s.searchAmn ">
+  {{a}}
+   <label class="checkbox">
+   <input type="checkbox" value="{{a}}" ng-click="checkAmentity(a)">
+   </label>
+</li>
+
+</ul>
+			
+		<button class="check_done" ng-click="modalAmentities.hide()">DONE</button>	
+			
+        </ion-content>
+      </ion-modal-view>

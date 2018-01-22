@@ -1,0 +1,66 @@
+      <ion-modal-view>
+      	<ion-content class="bgbody" padding="true">
+      		<ion-header-bar class="tb_heads">
+      			<button class="tb-pop-close button-clear" ng-click="hideSignup()">
+      				<i class="icon icon-left ion-close-round"></i>
+      			</button>
+      		</ion-header-bar>
+      		<div class="list">
+      			<div class="logo_tb">
+      				<img src="img/tb-logo.png">
+      			</div>
+      			<div class="list-full">
+                        <form  ng-submit="regForm.$valid && doSignUp()" name="regForm">
+                        
+      				<div class="list-fullno">
+      					<div class="app_sign">
+      						<img src="img/mobile.png">
+      					</div>
+      					<label class="item item-input bord_no">
+      						<input type="tel" class="algn_cent bgbody lefft" placeholder='Mobile' name="phone_no" ng-model="regData.phone_no" ng-pattern="/^[1-9]{1}[0-9]{9}$/" required>
+      					</label>
+                                          <div class="error" ng-show="submitted && regForm.phone_no.$error.required">Mobile Number Required.</div>
+                                          <!-- <div class="error" ng-show="regForm.phone_no.$touched && regForm.phone_no.$error.minlength">Invalid Mobile Number.</div>
+                                          <div class="error" ng-show="regForm.phone_no.$touched && regForm.phone_no.$error.maxlength">Invalid Mobile Number.</div> -->
+                                          <div class="error" ng-show="regForm.phone_no.$touched && regForm.phone_no.$error.pattern">Invalid Mobile Number.</div>
+                                    <div class="app_sign">
+                                          <img src="img/mobile.png">
+                                    </div>
+
+                                    <label class="item item-input bord_no">
+                                          <input type="email" class="algn_cent bgbody lefft" placeholder='Email' ng-model="regData.email_id" name="email_id" required>
+                                    </label>                                    
+                                          <div class="error" ng-show="submitted  && regForm.email_id.$error.required">Email-Id Required.</div>
+                                          <div class="error" ng-show="regForm.email_id.$touched && regForm.email_id.$invalid">Invalid Email-Id.</div>
+      					
+                                    <div class="app_sign">
+      						<img src="img/lock.png">
+      					</div>
+      					<label class="item item-input bord_no">
+      						<input type="password" class="algn_cent bgbody lefft" placeholder='Password' name="password" ng-model="regData.password" ng-minlength="6" required>
+      					</label>                                    
+                                          <div class="error" ng-show="submitted  && regForm.password.$error.required">Password Required.</div>
+                                          <div class="error" ng-show="regForm.password.$touched && regForm.password.$invalid">Password should have minimum 6 characters.</div>
+      					<div class="app_sign">
+                                          <img src="img/lock.png">
+                                    </div>
+                                    <label class="item item-input bord_no">
+                                          <input type="password" class="algn_cent bgbody lefft" placeholder='Confirm Password' ng-model="regData.password_verify" name='confirm_password' required data-password-verify="regData.password">                                          
+                                    </label>
+                                          <div class="error" ng-show="submitted  && regForm.confirm_password.$error.required">Confirm Password Required.</div>
+                                          <div class="error" ng-show="regForm.confirm_password.$error.passwordVerify">Password Miss Match!</div>
+                                    <p><input type="checkbox" name="checkbox" class="check_true" ng-model="regData.checkbox" required /> By signing up, you agree to our <a href="#">Terms and Conditions.</a></p>
+                                    <div class="error" ng-show="submitted && regForm.checkbox.$error.required">Please accept Terms and Conditions .</div>
+                                    <br>
+                                    <div class = "message" ng-show="showMessage" >{{showMessage}}</div>
+                                    <br>
+      					<label class="">
+      							<button class="redclr" type="submit" ng-click="submitted=true">SIGN UP</button>
+      					</label>
+                                    <p style="cursor: pointer;" ng-click="modal2.hide();sign_in();">Already have an account?</p>
+      				</div>
+                              </form>
+      			</div>
+      		</div>
+      	</ion-content>
+      </ion-modal-view>

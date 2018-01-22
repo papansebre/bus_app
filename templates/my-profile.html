@@ -1,0 +1,98 @@
+<ion-view view-title="My Profile" hide-back-button="true" scrollbar-x="false" scrollbar-y="false">
+   <ion-nav-buttons side="left">
+      <span class="left-buttons">
+      <button class="button button-icon button-clear ion-navicon whtclr" menu-toggle="left"></button>
+      </span>
+   </ion-nav-buttons>
+  <ion-content class="bgbody">
+      <div class="list-full padddcr" style="padding-top:45px;">
+
+<div class="profile_pic"><img src="img/login.png"></div>
+		<!-- Form Module-->
+<div class="module form-module">
+  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+    
+  </div>
+  <div class="form">
+    <h2>Personal details</h2>
+    <form>
+		  <input type="text"  class="algn_lft bgbody" placeholder='Name' >
+     <div class="age">
+               <div class="age1">
+                  <input type="text"  class="algn_lft bgbody" placeholder='Age' >
+               </div>
+               <div class="age2">
+                  <div class="maxl chages">
+                     Gender
+                     <label class="radio inline"> 
+                     <input type="radio" name="sex" value="male" checked>
+                     <span> Male </span> 
+                     </label>
+                     <label class="radio inline"> 
+                     <input type="radio" name="sex" value="female">
+                     <span>Female </span> 
+                     </label>
+                  </div>
+               </div>
+            </div>
+		
+		 <input type="text"  class="algn_lft bgbody" placeholder='Mobile Number' >
+		 <input type="text"  class="algn_lft bgbody" placeholder='Email Address' >
+	
+    </form>
+  </div>
+  <div class="form">
+     <h2>Personal details</h2>
+    <form>
+    <input type="text"  class="algn_lft bgbody" placeholder='Name' >
+     <div class="age">
+               <div class="age1">
+                  <input type="text"  class="algn_lft bgbody" placeholder='Age' >
+               </div>
+               <div class="age2">
+                  <div class="maxl chages">
+                     Gender
+                     <label class="radio inline"> 
+                     <input type="radio" name="sex" value="male" checked>
+                     <span> Male </span> 
+                     </label>
+                     <label class="radio inline"> 
+                     <input type="radio" name="sex" value="female">
+                     <span>Female </span> 
+                     </label>
+                  </div>
+               </div>
+            </div>
+		
+		 <input type="text"  class="algn_lft bgbody" placeholder='Mobile Number' >
+		 <input type="text"  class="algn_lft bgbody" placeholder='Email Address' >
+    </form>
+  </div>
+ 
+</div>  
+		  
+		  
+		  
+      </div>
+   </ion-content>
+	<script>
+	
+	// Toggle Function
+$('.toggle').click(function(){
+  // Switches the Icon
+  $(this).children('i').toggleClass('fa-pencil');
+  // Switches the forms  
+  $('.form').animate({
+    height: "toggle",
+    'padding-top': 'toggle',
+    'padding-bottom': 'toggle',
+    opacity: "toggle"
+  }, "slow");
+});
+	
+	
+	
+	</script>
+</ion-view>
+
+

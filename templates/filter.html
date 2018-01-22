@@ -1,0 +1,112 @@
+<ion-view view-title="Kochi To Thrivandrum" scrollbar-x="false" scrollbar-y="false" hide-nav-bar="true">
+   <ion-header-bar align-title="left" class="artist-title-bg border">
+      <div class="buttons">
+         <button class="button back-button whtclr button-clear header-item" ng-click="$ionicGoBack()"><i class="icon ion-ios-arrow-back"></i>
+         <span class="back-text" style="transform: translate3d(0px, 0px, 0px);"><span class="default-title">&nbsp;</span></span>
+         </button>
+      </div>
+      <div class="tit">
+      Sort and Filter
+      </div>
+   </ion-header-bar>
+   <ion-content class="bgbody">
+  <div class="bus_type">
+     Bus Type
+     
+     </div>
+
+    <div class="bus_category">
+         <div class="bus_list" style="border:none;" ng-repeat="n in bus_types">
+           <div class="row" ng-if="$even">
+                <div class="col">
+                      <div class="bus_cate" id="bus_type_{{bus_types[$index].bus_type}}" ng-click="checkType(bus_types[$index].bus_type)">
+                         {{bus_types[$index].bus_type}}
+                       </div>
+                </div>
+                <div class="col">
+                      <div class="bus_cate" id="bus_type_{{bus_types[$index+1].bus_type}}" ng-click="checkType(bus_types[$index + 1].bus_type)">
+                         {{bus_types[$index + 1].bus_type}}
+                      </div>
+                </div>
+           </div>
+        </div>
+    </div>
+     
+       <div class="bus_type">
+   Location & Travels
+     
+     </div>
+     <div class="location_outr">
+        <div class="bus_dtlinner paddingnill"  ng-click="showTravels()">
+               <div class="row">
+                  <div class="col">
+                     <div class="boarding">
+               <img src="img/travel.png"> Travels
+                     </div>
+                  </div>
+                  <div class="col">
+                     <div class="boarding_points1 drop_but">
+                    &nbsp;
+                     </div>
+                  </div>
+               </div>
+            </div>
+       <div class="bus_dtlinner paddingnill"  ng-click="showBoarding()">
+               <div class="row">
+                  <div class="col">
+                     <div class="boarding">
+                      <img src="img/tb_board.png"> Boarding Points
+                     </div>
+                  </div>
+                  <div class="col">
+                     <div class="boarding_points1 drop_but">
+                    &nbsp;
+                     </div>
+                  </div>
+               </div>
+            </div>
+       
+          <div class="bus_dtlinner paddingnill"  ng-click="showDropping()">
+               <div class="row">
+                  <div class="col">
+                     <div class="boarding">
+                       <img src="img/tb_board.png"> Dropping Points
+                     </div>
+                  </div>
+                  <div class="col">
+                     <div class="boarding_points1 drop_but">
+                    &nbsp;
+                     </div>
+                  </div>
+               </div>
+            </div>
+       
+       
+          <div class="bus_dtlinner paddingnill"  ng-click="showAmentities()">
+               <div class="row">
+                  <div class="col">
+                     <div class="boarding">
+                       <img src="img/travel.png"> Amenities
+                     </div>
+                  </div>
+                  <div class="col">
+                     <div class="boarding_points1 drop_but">
+                    &nbsp;
+                     </div>
+                  </div>
+               </div>
+            </div>
+    <div class="button_lower">
+       <a href="#/app/search-rslts">  <button class="check_done mtop">DONE</button> </a>
+     </div>
+     </div>
+     
+     </div>
+
+  
+   
+    
+   
+   </ion-content>
+</ion-view>
+

@@ -1,0 +1,134 @@
+<ion-view view-title="" >
+        <ion-content class="bgbody" scroll="false">
+            <ion-slide-box slide-tabs-scrollable="false"  show-pager="false" ion-slide-tabs>
+                <ion-slide ion-slide-tab-label="My Trips">
+        <div class="my_trips">
+          <div class="my_trips_inner" ng-click="tripModal(trip)" ng-repeat="trip in tripDetails track by $index"> 
+            <div class="my_trips_inner1">{{trip.board_point}}<br>
+              <span class="time">{{trip.board_time}}</span>
+            </div>
+            <div class="my_trips_inner2"> 
+              <img src="img/arw_rht.png"> 
+            </div>
+            <div class="my_trips_inner3">{{trip.drop_point}}<br>
+              <span class="time">{{trip.drop_time}}</span>
+            </div>
+            <div class="my_trips_inner4" menu-close=""> 
+              <img src="img/dots.png"> 
+            </div>
+          </div>
+          <div class="message" ng-show="noTrips" >{{noBuserror}}</div>
+                    
+        </div>
+        
+        
+        </ion-slide>
+                <ion-slide ion-slide-tab-label="Wallet">
+          
+          
+          
+        </ion-slide>
+                <ion-slide ion-slide-tab-label="My Profile">
+          
+  <div class="my_prof">
+      <div class="profile_pic"><img src="img/login.png"></div>
+    <!-- Form Module-->
+<div class="module form-module">
+  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+    
+  </div>
+  <div class="form">
+    <h2>Personal details</h2>
+    <form name="editForm" ng-submit="saveProfile()">
+      <input type="text" name="name" class="algn_lft bgbody" ng-model="userDetails.name" placeholder='Name' maxlength="25" >
+     <div class="age">
+               <div class="age1">
+                  <input type="text" class="algn_lft bgbody" ng-click="openDatePicker()" ng-model="userDetails.dob"placeholder='Dob : MM/DD/YYYY' readonly>
+               </div>
+               <div class="age2">
+                  <div class="maxl chages">
+                     Gender
+                     <label class="radio inline"> 
+                     <input type="radio" name="sex" ng-model="userDetails.gender" value="male" ng-checked="userDetails.gender=='male'">
+                     <span> Male </span> 
+                     </label>
+                     <label class="radio inline"> 
+                     <input type="radio" name="sex" ng-model="userDetails.gender" ng-checked="userDetails.gender=='female'" value="female">
+                     <span>Female </span> 
+                     </label>
+                  </div>
+               </div>
+            </div>
+    
+     <input type="tel" class="algn_lft bgbody" ng-model="userDetails.mob" name = "phone_no" placeholder='Mobile Number' readonly>
+     <input type="email"  class="algn_lft bgbody" ng-model="userDetails.username" name="email_id" placeholder='Email Adress' readonly >
+
+    <div class="button_list">
+      <input class="tab_save" type="submit" ng-click="submitted=true" value="SAVE">   
+      <input class="tab_cancel"  type="button" ng-click="cancel_edits()" value="CANCEL">
+      <div class="showmsg"></div>
+    </div>
+
+</form>
+
+  </div>
+
+
+  
+  <!-- <div class="form">
+     <h2>Personal details</h2>
+    <form>
+    <input type="text"  class="algn_lft bgbody" placeholder='Name' >
+     <div class="age">
+               <div class="age1">
+                  <input type="text"  class="algn_lft bgbody" placeholder='Age' >
+               </div>
+               <div class="age2">
+                  <div class="maxl chages">
+                     Gender
+                     <label class="radio inline"> 
+                     <input type="radio" name="sex" value="male" checked>
+                     <span> Male </span> 
+                     </label>
+                     <label class="radio inline"> 
+                     <input type="radio" name="sex" value="female">
+                     <span>Female </span> 
+                     </label>
+                  </div>
+               </div>
+            </div>
+    
+     <input type="text"  class="algn_lft bgbody" ng-model="userDetails.mob" placeholder='Mobile Number' >
+     <input type="text"  class="algn_lft bgbody" placeholder='Email Adress' >
+    </form>
+  </div> -->
+ 
+</div>  
+</div>
+          
+        </ion-slide>
+            </ion-slide-box>
+        </ion-content>
+
+
+  <!--  <script>
+  
+  // Toggle Function
+$('.toggle').click(function(){
+  // Switches the Icon
+  $(this).children('i').toggleClass('fa-pencil');
+  // Switches the forms  
+  $('.form').animate({
+    height: "toggle",
+    'padding-top': 'toggle',
+    'padding-bottom': 'toggle',
+    opacity: "toggle"
+  }, "slow");
+});
+  
+  
+  
+  </script> -->
+
+
+    </ion-view>

@@ -1,0 +1,53 @@
+<ion-view view-title="{{searchData.from}} To {{searchData.to}}" hide-back-button="true" scrollbar-x="false" scrollbar-y="false">
+   <ion-nav-buttons side="left">
+      <span class="left-buttons">
+      <button class="button button-icon button-clear ion-navicon whtclr" menu-toggle="left"></button>
+      </span>
+   </ion-nav-buttons>
+   <ion-content class="bgbody">
+      <div class="bus_detail">
+         <div class="booking_dtl">
+            Passenger Details
+            <p ng-repeat="s in seats" class="pass">{{s}}&nbsp;&nbsp;</p>
+         </div>
+         <div></div>
+         <div class="booking_otr">
+            <form name="customerForm" ng-submit="customerForm.$valid && custDetails()">
+            <div ng-repeat ="(key,s) in seats track by $index" >                   <!-- for ng repeat -->
+               <input type="text" ng-model="user.name[key]" class="algn_lft bgbody" name="name_{{$index}}" placeholder='Name' ng-pattern="/^[a-zA-Z ]*$/" required >
+               <div class="error" ng-show = "submitted && customerForm.name_{{$index}}.$error.required">Name Required</div>
+               <div class="error" ng-show="customerForm.name_{{$index}}.$touched && customerForm.name_{{$index}}.$error.pattern">Invalid Characters</div>
+               <div class="age">
+                  <div class="age1">
+                     <input type="number" ng-model="user.age[key]" class="algn_lft bgbody" name="age_{{$index}}"placeholder='Age' required ng-maxlength="2">
+                     <div class="error" ng-show = "submitted && customerForm.age_{{$index}}.$error.required">Age Required</div>
+                     <div class="error" ng-show="customerForm.age_{{$index}}.$touched && customerForm.age_{{$index}}.$invalid">Invalid Age</div>
+                  </div>
+                  <div class="age2">
+                     <div class="maxl">
+                        Gender
+                        <label class="radio inline"> 
+                        <input type="radio" name="gender_{{$index}}" ng-model="user.gender[key]" value="male" required>
+                        <span> Male </span> 
+                        </label>
+                        <label class="radio inline"> 
+                        <input type="radio" name="gender_{{$index}}" ng-model="user.gender[key]" value="female"required>
+                        <span>Female </span> 
+                        </label>
+                        <div class="error" ng-show = "submitted && customerForm.gender_{{$index}}.$error.required">Gender Required</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <input type="email" name= "email" class="algn_lft bgbody nopadding" ng-model="user.email" placeholder='Ticket will be sent to this Email ID' required />
+                  <div class="error" ng-show = "submitted && customerForm.email.$error.required">Email Required</div>
+                  <div class="error" ng-show="customerForm.email.$touched && customerForm.email.$invalid">Invalid Email-Id</div>
+            <input type="tel" name="mobile" class="algn_lft bgbody" ng-model="user.mobile" placeholder='Enter Phone Number' ng-pattern="/^[1-9]{1}[0-9]{9}$/" required >
+                  <div class="error" ng-show="submitted && customerForm.mobile.$error.required">Mobile Number Required</div>
+                  <div class="error" ng-show="customerForm.mobile.$touched && customerForm.mobile.$error.pattern">Invalid Mobile Number</div>
+            <button class="redclr mtop" type="submit" ng-click="submitted=true;">CONTINUE BOOKING</button>
+         </div>
+      </div>
+   </ion-content>
+</ion-view>
+

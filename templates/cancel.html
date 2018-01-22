@@ -1,0 +1,36 @@
+<ion-view view-title="Cancel Ticket" hide-back-button="true" scrollbar-x="false" scrollbar-y="false">
+   <ion-nav-buttons side="left">
+      <span class="left-buttons">
+      <button class="button button-icon button-clear ion-navicon whtclr" menu-toggle="left"></button>
+      </span>
+   </ion-nav-buttons>
+  <ion-content class="bgbody">
+      		<div class="list">
+      			<div class="logo_tb">
+      				<img src="img/tb-logo.png">
+      			</div>
+      			<div class="list-full">
+                <form  ng-submit="cancelForm.$valid && doCancel()" name="cancelForm">
+      				<div class="list-fullno">
+      					<label class="item item-input bord_no1">
+      						<input type="text" class="algn_cent bgbody lefft text-input" placeholder='Ticket Number' name="ticket_no" ng-model="cancelData.booking_id" required>
+      					</label>
+                        <div class="error" ng-show="submitted && cancelForm.ticket_no.$error.required">Ticket Number required.</div>
+      					<label class="item item-input bord_no1">
+      						<input type="email" class="algn_cent bgbody lefft" placeholder='Email ID' name="email" ng-model="cancelData.email" required>
+      					</label>
+                        <div class="error" ng-show="submitted  && cancelForm.email.$error.required">Email ID required.</div>
+                        <div class="error" ng-show="cancelForm.email.$touched && cancelForm.email.$invalid">Invalid Email-Id.</div>
+      					<br>
+                         <div class= "message" ng-show="showMessage" >{{showMessage}}</div>
+      					<br>
+      					<label class="item none">
+      						<button class="redclr" type="submit" ng-click="submitted=true">CANCEL TICKET</button>
+      					
+      					</label>
+      				</div>
+                </form>
+      			</div>
+      		</div>
+  </ion-content>
+</ion-view>

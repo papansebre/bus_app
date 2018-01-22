@@ -1,0 +1,33 @@
+ <ion-modal-view>
+      	<ion-content class="bgbody" padding="true">
+      	<ion-header-bar class="tb_heads">
+      			<button class="tb-pop-close button-clear" ng-click="modal5.hide()">
+      				<i class="icon icon-left ion-close-round"></i>
+      			</button>
+      		</ion-header-bar>
+      		<div class="list">
+      			<div class="logo_tb">
+      				<img src="img/tb-logo.png">
+      			</div>
+      			<div class="list-full">
+      				<div class="list-fullno">
+      					<div class="app_sign">
+      						<img src="img/mobile.png">
+      					</div>
+                                    <form name="forgotForm" ng-submit="forgotForm.$valid && doForgot()">
+            					<label class="item item-input bord_no">
+            						<input type="email" class="algn_cent bgbody lefft" ng-model= "u.emailF" name="emailF" placeholder='Email' required>
+            					</label>
+                                          <div class="error" ng-show="submitted  && forgotForm.emailF.$error.required">Email-Id Required.</div>
+                                          <div class="error" ng-show="forgotForm.emailF.$touched && forgotForm.emailF.$invalid">Invalid Email-Id.</div>
+            					<br>
+            					<br>
+            					<label class="item none">
+            						<button class="redclr" type="submit" ng-click="submitted=true;">Send Mail</button>
+            					</label>
+                                    </form>
+      				</div>
+      			</div>
+      		</div>
+      	</ion-content>
+      </ion-modal-view>

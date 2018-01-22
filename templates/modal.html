@@ -1,0 +1,42 @@
+ <ion-modal-view>
+      	<ion-content class="bgbody" padding="true">
+      	<ion-header-bar class="tb_heads">
+      			<button class="tb-pop-close button-clear" ng-click="modal.hide()">
+      				<i class="icon icon-left ion-close-round"></i>
+      			</button>
+      		</ion-header-bar>
+      		<div class="list">
+      			<div class="logo_tb">
+      				<img src="img/tb-logo.png">
+      			</div>
+      			<div class="list-full">
+                              <form  ng-submit="logForm.$valid && doSignIn()" name="logForm">
+      				<div class="list-fullno">
+      					<div class="app_sign">
+      						<img src="img/mobile.png">
+      					</div>
+      					<label class="item item-input bord_no">
+      						<input type="text" class="algn_cent bgbody lefft" placeholder='Email / Mobile' name="phone_no" ng-model="logData.phone_no" required>
+      					</label>
+                                          <div class="error" ng-show="submitted && logForm.phone_no.$error.required">Email/Mobile is required.</div>
+      					<div class="app_sign">
+      						<img src="img/lock.png">
+      					</div>
+      					<label class="item item-input bord_no">
+      						<input type="password" class="algn_cent bgbody lefft" placeholder='Password' name="password" ng-model="logData.password" required>
+      					</label>
+                                    <div class="error" ng-show="submitted  && logForm.password.$error.required">Password is required.</div>
+      					<br>
+                                    <div class= "message" ng-show="showlogMessage" >{{showlogMessage}}</div>
+      					<br>
+      					<label class="item none">
+      						<button class="redclr" type="submit" ng-click="submitted=true">SIGN IN</button>
+      					
+      					</label>
+                                    <p style="cursor: pointer;" ng-click="modal.hide();sign_up();">Add a New account?</p>
+      				</div>
+                              </form>
+      			</div>
+      		</div>
+      	</ion-content>
+      </ion-modal-view>

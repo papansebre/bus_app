@@ -1,0 +1,51 @@
+<ion-view view-title="Kochi To Thrivandrum" scrollbar-x="false" scrollbar-y="false" hide-nav-bar="true">
+   <ion-header-bar align-title="left" class="artist-title-bg border">
+      <div class="buttons">
+         <button class="button back-button whtclr button-clear header-item" ng-click="$ionicGoBack()"><i class="icon ion-ios-arrow-back"></i>
+         <span class="back-text" style="transform: translate3d(0px, 0px, 0px);"><span class="default-title">&nbsp;</span></span>
+         </button>
+      </div>
+      <div class="head_search">
+         <div class="search_tit">
+            Select Boarding Point
+         </div>
+         <div class="board_search">
+           <input type="text" placeholder="search" name="search" ng-model="b.searchBrd" class="search_lense" />
+         </div>
+      </div>
+      <!-- <button class="search"></button> -->
+   </ion-header-bar>
+   <ion-content class="bgbody">
+      <div class="outer">
+         <div class="place_inf">
+            <div class="plce_dtl">
+               <div class="place_from">{{searchData.from}}</div>
+               <div class="arrows_plc"><img src="img/arrow-right.png">
+               </div>
+               <div class="place to">{{searchData.to}}</div>
+            </div>
+            <br>
+            <div class="dte_arw">
+               <img src="img/left-arw.png" class="arw_img">&nbsp; &nbsp; <span class="date_current"> {{searchData.book_date | date:'dd-MMMM-yyyy' }} </span>&nbsp;&nbsp; <img src="img/rht-arw.png" class="arw_img">
+            </div>
+         </div>
+         <div class="bus_detail">
+               <div class="bus_dtlinner" ng-repeat ="bp in oneBus.Dpoints | filter:b.searchBrd" ng-click="selectBoard(bp)">
+                  <div class="row">
+                     <div class="col">
+                        <div class="boarding_points">
+                           {{bp.dplace}}
+                        </div>
+                     </div>
+                     <div class="col">
+                        <div class="boarding_points1">
+                           {{bp.time}}
+                        </div>
+                     </div>
+                  </div>
+               </div>
+         </div>
+      </div>
+   </ion-content>
+</ion-view>
+

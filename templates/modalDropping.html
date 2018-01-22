@@ -1,0 +1,26 @@
+<ion-modal-view>
+         <ion-header-bar align-title="left" class="artist-title-bg border">
+      <div class="search_tit">
+      filter dropping points
+      </div>
+      <div class="board_search">
+        <input type="text" placeholder="search" name="search" ng-model="s.searchDrp" class="search_lense" />
+      </div>
+      <!-- <button class="search"></button> -->
+   </ion-header-bar>
+        <ion-content class="padding">
+			
+			<ul class="list">
+<li class="item item-checkbox" ng-repeat="dp in droppingP | filter:s.searchDrp">
+   {{dp.Stop}}
+   <label class="checkbox">
+   <input type="checkbox" ng-click="checkDropping(dp.Stop)">
+   </label>
+</li>
+
+</ul>
+			
+		<button class="check_done" ng-click="modalDropping.hide()">DONE</button>	
+			
+        </ion-content>
+      </ion-modal-view>

@@ -1,0 +1,61 @@
+<ion-view view-title="Select Your Seat" hide-back-button="true" scrollbar-x="false" scrollbar-y="false">
+   <ion-nav-buttons side="left">
+      <span class="left-buttons">
+      <button class="button button-icon button-clear ion-navicon whtclr" menu-toggle="left"></button>
+      </span>
+   </ion-nav-buttons>
+  <ion-content class="bgbody">
+      <div class="list-full">
+         <form ng-submit="searchForm.$valid && doSearch()" name="searchForm">
+         <div class="true_sign">
+            <div class="true_uname">
+               <div class="app_sign"> <img src="img/location.png"></div>
+               <label class="item item-input bord_no">
+                  <!--<span class="input-label">Username</span>-->
+                  <!-- <ion-header-bar class="bar-subheader item-input-inset transper"> -->
+                     <input type="text" class="algn_cent bgbody remove_pad_right" placeholder='From' ng-change="search_city()" ng-model="searchData.from" name="from" required>
+                  <!-- </ion-header-bar> -->
+                  
+               </label>
+               <div class="error" ng-show="submitted && searchForm.from.$error.required">Starting Location is required.
+               </div>
+
+               <div class="list_search drop-google">
+                  <ul class="str-loc">
+                         <li class="item_search boardlist srch_bar" ng-click="doSelect(fromlist.board_point)" ng-repeat="fromlist in data.from_list">{{fromlist.board_point}}</li>
+                  </ul>
+              
+               </div>
+            </div>
+               <div class="true_pass">
+                  <div class="app_sign"> <img src="img/location.png"></div>
+                  <label class="item item-input bord_no">
+                     <!--<span class="input-label">Password</span>-->
+                     <input type="text"  class="algn_cent bgbody remove_pad_right" placeholder='To' 
+                     ng-change="search_city_drop()" ng-model="searchData.to" name="to" required>
+                  </label>
+                  <div class="error" ng-show="submitted && searchForm.to.$error.required">Ending Location is required.</div>
+                  <div class="list_search drop-google">
+                     <ul class="str-loc">
+                           <li class="item_search droplist srch_bar" ng-click="doSelect_drop(tolist.drop_point)" ng-repeat="tolist in data.to_list">{{tolist.drop_point}}</li>
+                     </ul>
+                  </div>
+               </div>
+
+            <br>
+
+            <div class="date-div">
+               <input type="hidden" name="book_date" ng-model="searchData.book_date">
+               <button class="date_pick" ng-click="openDatePicker()" type="button"> {{ searchData.book_date | date:'dd-MMMM-yyyy' }} </button>
+            </div>
+            <div class="button_div">
+               <button class="redclr" type="submit" ng-click="submitted=true">Search  Buses</button>
+            </div>
+
+
+         </div>
+         </form>
+      </div>
+   </ion-content>
+</ion-view>
+

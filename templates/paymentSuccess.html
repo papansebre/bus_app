@@ -1,0 +1,22 @@
+<ion-modal-view>
+         <ion-header-bar align-title="left" class="artist-title-bg border">
+      <div class="tit">
+      Payment Success
+      </div>
+   </ion-header-bar>
+        <ion-content class="padding">
+        <div class="logo_tb">
+              <img src="img/tb-logo.png">
+        </div>
+        <div class="common">
+            <h4 class="payment">Payment Successful.!!</h4>
+            <p class="bid">Your Booking ID is : {{book_id}}</p>
+            <div class="back">Go Back To</div>
+        </div>
+			
+    <div class="total">
+		<button class="check_done buttonP floatB first" ui-sref="app.search" ng-click="paySuccess.hide()">HOME</button>	
+    <button class="check_done buttonP floatB" ng-click="goTrip()">MY TRIPS</button>
+		</div>	
+        </ion-content>
+      </ion-modal-view>
